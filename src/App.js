@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import { Navbar } from './components';
 import { Home } from './pages';
@@ -8,9 +8,9 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Router>
-        <Routes path='/' element={<Home />} />
-      </Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
     </div>
   );
 };
