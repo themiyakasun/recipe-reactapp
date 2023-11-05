@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const catUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const meals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
@@ -95,8 +96,12 @@ const Home = () => {
               className='flex-[0_0_33.33%] max-w-[33.33%] mb-5 px-[15px]'
               key={id}
             >
-              <img src={image} alt='' />
-              <h2>{meal}</h2>
+              <Link to={`meal/${id}`}>
+                <div>
+                  <img src={image} alt='' />
+                  <h2>{meal}</h2>
+                </div>
+              </Link>
             </div>
           );
         })}
